@@ -1,0 +1,14 @@
+int m = sqrt(n+0.5);
+int c = 0;
+memset(vis,0,sizeof(vis));
+for(int i = 2;i<=m;i++)
+{
+	if(!vis[i])
+	{
+		prime[c++] = i;
+		for(int j = i*i;j<=n;j+=i)
+		{
+			vis[j] = 1;
+		}
+	}
+}

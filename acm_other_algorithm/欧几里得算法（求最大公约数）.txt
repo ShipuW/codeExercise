@@ -1,0 +1,29 @@
+//辗转相除法--递归
+int gcd(int a,int b)
+{
+	return b == 0 ? a:gcd(b, a%b);
+}
+//辗转相除法--纯循环
+int gcd(int a,int b)
+{
+    int r;
+    while(b!=0)
+    {
+       r=a%b;
+       a=b;
+       b=r;
+    }
+    return a;
+}
+//更相减损法
+int gcd(int a,int b)
+{
+    while(a!=b)
+    {
+       if(a>b)
+           a-=b;
+       else
+           b-=a;
+    }
+    return a;
+}

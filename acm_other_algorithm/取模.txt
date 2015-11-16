@@ -1,0 +1,24 @@
+//大整数取模
+#include<stdio.h>
+int main()
+{
+	scanf("%s%d",n,&m);
+	int len = strlen(n);
+	int ans = 0;
+	for(int i = 0;i<len;i++)
+	{
+		ans = (int)(((long long)ans*10 + n[i])%m);
+	}
+	printf("%d\n",ans);
+}
+//幂取模
+int pow_mod(int a,int n,int m)
+{
+	int x = pow_mod(a,n/2,m);
+	long long ans = (long long)x*x%m;
+	if(n%2 == 1)
+	{
+		ans = ans*a%m;
+	}
+	return (int)ans;
+}

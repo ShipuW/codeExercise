@@ -1,0 +1,31 @@
+总题数：15
+总类数：15
+
+
+动态规划：
+1，数塔 （）
+2，最大和的递增子序列 （http://vjudge.net/contest/view.action?cid=51810#problem/E）
+3，lcs最长公共子序列（poj 1458）（递推公式：if(ym == xn){ arr[i][j] = arr[i-1][j-1]; }else{ arr[i][j] = max(arr[i-1][j],arr[i][j-1]); }）
+4，01背包问题（hihocoder 第六期）（普通算法，以及优化算法，递推公式：if(weight(i)<=j){ arr[i][j] = max(arr[i-1][j],arr[i-1][j-weight(i)]+value[i]); }else{ arr[i][j] = arr[i-1][j]; }）
+5，完全背包问题（hihocoder 第七期）（01背包稍作修改，代码优化等）
+6，记忆化搜索dp（poj 1088 滑雪问题）
+
+贪心算法：
+1，重叠区间 （poj 1328）
+
+图论：
+1，弗洛伊德（poj 1125）（三重循环）
+2，迪杰斯特拉（poj 1502）（邻接矩阵，vertex表，distance表；初始化vertex与distance，while循环判断vertex数组check函数，找新点并入集合，更新distance表）
+3，prim算法（poj 2458）（wa，思路跟dijkstra类似）
+4，dfs（poj 1979）（dfs过程：递归结束条件，递归过程）
+5，bfs（poj 3984）（队列）
+
+其他：
+1，二分查找（poj 2503）（1，注意gets()与sscanf()的使用。2，熟悉使用qsort函数。3，二分查找的while循环）
+2，大数相加（poj 1503）（注意判断最高位的进位：没有进位时 和 进位超过一位数 的两种情况）
+3，极角排序（poj 1106）（注意atan2的使用，注意圆外的点要舍弃，注意while循环的结束条件，注意j值的变化）
+
+经典算法：
+1，匈牙利算法（poj 1469）（1，注意：循环变量在递归时不要弄成全局变量）
+2，并查集（hdoj 1272）（1，路径压缩算法）
+3，线段树（poj 3468）（tle）（1，注意atoi和sscanf的使用。2，核心代码insert和build）

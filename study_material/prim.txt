@@ -1,0 +1,57 @@
+prim
+#include <iostream>
+#define MAX 502
+using namespace std;
+int str[MAX][MAX];
+bool visit[MAX];//标记数组，没有加入到树中时为false,加入了为true
+int distan[MAX];//用以记录当前树到各个顶点的最小距离（它会被不断的更新，加入一个顶点更新一次）
+int n;
+int prim()//prim算法
+{
+    int v,i,j,maxi=0;
+    visit[0]=true;//将第一个顶点加入树中
+    for(i=0;i<n;i++)//计算只有一个顶点时的distan[i]
+        distan[i]=str[0][i];
+    
+    for(j=1;j<n;j++)
+    {
+        int mini=65550;
+        for (i=0;i<n;i++)//找最小的边
+        {
+            if(visit[i]==false&&distan[i]<mini)//找出没有在当前树中且权值最小的点
+            {
+                mini=distan[i];
+                v=i;
+            }
+        }
+        //cout<<mini<<' ';
+        visit[v]=true;//标记顶点v,加入生成树中
+        if(maxi<mini)
+            maxi=mini;
+        for (i=0;i<n;i++)//将生成树的权值更新
+        {
+            if(visit[i]==false&&distan[i]>str[v][i])//distan[i]中始终放生成树到顶点i的最小权值
+            {
+                distan[i]=str[v][i];
+            }
+        }
+    }
+    return maxi;
+}
+
+int main()
+{
+    int i,j,t;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        for(i=0;i<n;i++)
+            visit[i]=false;
+        for(i=0;i<n;i++)
+            for(j=0;j<n;j++)
+                scanf("%d",&str[i][j]);
+            cout<<prim()<<endl;
+    }
+    return 0;
+}

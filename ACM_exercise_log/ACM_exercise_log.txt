@@ -1,0 +1,7 @@
+1，（cqu_trains 8.26    K）    ascll:A-Z:65-90,a-z:97-122,0-9:48-57.
+2，（cqu_trains 8.26    P）    char str[10]类型的字符串比较用strcmp（include<string.h>）
+3，（cqu_trains 8.26    G）   （1，strchr与strstr的使用。2，malloc的使用。3，函数返回字符串的注意事项）
+4，（cqu_trains 8.26    B）   （博弈 给任意字母 两人轮流每次抽取一个 字符，能现组成 回文数者胜）（方法：判断 字符个数是奇数的个数，如果为 奇数 或者 0 则先手胜）
+5，dynamic planning（summer contest1 D）（http://vjudge.net/vjudge/contest/view.action?cid=55077#overview）（递推公式 dp[i] = i+sum[i-1]-max(0,sum[i-k-1])  sum[i] = dp[i]+sum[i-1] ）
+6，状态压缩dp（poj 3254）（1，用十进制数表示二进制的序列。2，十进制的&（按位与）运算。3，位移运算>> <<）
+7，hdoj4994（bestcoder#9第二题）（博弈）

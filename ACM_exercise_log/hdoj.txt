@@ -1,0 +1,2 @@
+5053:operations like int j£¬long long sum£¬sum = j*j*j£¬'j*j*j' would not convert to 'long long' automatically
+5050(tle): double calculate max common divisor. floor return type--float. 3 method calculate max common divisor
